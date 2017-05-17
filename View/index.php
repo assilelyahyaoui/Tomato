@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="../css/jquery-ui.min.css">
 <script src="../css/jquery-ui.min.js"></script>
 
-<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="index.css">
 <link href="../css/bootstrap.css" rel="stylesheet">
 
@@ -23,41 +23,41 @@
 		var d = date.getDate();
 		var m = date.getMonth();
 		var y = date.getFullYear();
-		
+
 		/*  className colors
-		
+
 		className: default(transparent), important(red), chill(pink), success(green), info(blue)
-		
-		*/		
-		
-		  
+
+		*/
+
+
 		/* initialize the external events
 		-----------------------------------------------------------------*/
-	
+
 		$('#external-events div.external-event').each(function() {
-		
+
 			// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
 			// it doesn't need to have a start or end
 			var eventObject = {
 				title: $.trim($(this).text()) // use the element's text as the event title
 			};
-			
+
 			// store the Event Object in the DOM element so we can get to it later
 			$(this).data('eventObject', eventObject);
-			
+
 			// make the event draggable using jQuery UI
 			$(this).draggable({
 				zIndex: 999,
 				revert: true,      // will cause the event to go back to its
 				revertDuration: 0  //  original position after the drag
 			});
-			
+
 		});
-	
-	
+
+
 		/* initialize the calendar
 		-----------------------------------------------------------------*/
-		
+
 		var calendar =  $('#calendar').fullCalendar({
 			header: {
 				left: 'title',
@@ -68,7 +68,7 @@
 			firstDay: 1, //  1(Monday) this can be changed to 0(Sunday) for the USA system
 			selectable: true,
 			defaultView: 'month',
-			
+
 			axisFormat: 'h:mm',
 			columnFormat: {
                 month: 'ddd',    // Mon
@@ -101,34 +101,34 @@
 			},
 			droppable: true, // this allows things to be dropped onto the calendar !!!
 			drop: function(date, allDay) { // this function is called when something is dropped
-			
+
 				// retrieve the dropped element's stored Event Object
 				var originalEventObject = $(this).data('eventObject');
-				
+
 				// we need to copy it, so that multiple events don't have a reference to the same object
 				var copiedEventObject = $.extend({}, originalEventObject);
-				
+
 				// assign it the date that was reported
 				copiedEventObject.start = date;
 				copiedEventObject.allDay = allDay;
-				
+
 				// render the event on the calendar
 				// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
 				$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
-				
+
 				// is the "remove after drop" checkbox checked?
 				if ($('#drop-remove').is(':checked')) {
 					// if so, remove the element from the "Draggable Events" list
 					$(this).remove();
 				}
-				
+
 			},
-			
+
 			events: [
 				{
 					title: 'All Day Event',
 					start: new Date(y, m, 1)
-					
+
 				},
 				{
 					id: 999,
@@ -136,7 +136,7 @@
 					start: new Date(y, m, d-3, 16, 0),
 					allDay: false,
 					className: 'info'
-				
+
 
 				},
 				{
@@ -146,14 +146,14 @@
 					allDay: false,
 					className: 'info'
 				},
-				
+
 				{
 					title: 'Lunch',
 					start: new Date(y, m, d, 12, 0),
 					end: new Date(y, m, d, 14, 0),
 					allDay: true,
 					className: 'important'
-		
+
 
 				},
 				{
@@ -169,10 +169,10 @@
 					url: 'http://google.com/',
 					className: 'success'
 				}
-			],			
+			],
 		});
-		
-		
+
+
 	});
 
 </script>
@@ -186,25 +186,25 @@
 		font-family: 'Roboto', sans-serif;
 		/*background:url(http://www.digiphotohub.com/wp-content/uploads/2015/09/bigstock-Abstract-Blurred-Background-Of-92820527.jpg);*/
 		}
-		
+
 	#wrap {
 		width: 1100px;
 		margin: 0 auto;
 		}
-		
+
 	#external-events {
 		float: left;
 		width: 150px;
 		padding: 0 10px;
 		text-align: left;
 		}
-		
+
 	#external-events h4 {
 		font-size: 16px;
 		margin-top: 0;
 		padding-top: 1em;
 		}
-		
+
 	.external-event { /* try to mimick the look of a real event */
 		margin: 10px 0;
 		padding: 2px 4px;
@@ -213,13 +213,13 @@
 		font-size: .85em;
 		cursor: pointer;
 		}
-		
+
 	#external-events p {
 		margin: 1.5em 0;
 		font-size: 11px;
 		color: #666;
 		}
-		
+
 	#external-events p input {
 		margin: 0;
 		vertical-align: middle;

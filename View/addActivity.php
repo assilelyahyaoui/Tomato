@@ -6,7 +6,7 @@
   <h1>Add an Activity</h1>
 </head>
 
-<link href="./css/bootstrap.css" rel="stylesheet">
+<link href="../css/bootstrap.css" rel="stylesheet">
 
 
 <body>
