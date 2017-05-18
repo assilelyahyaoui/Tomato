@@ -38,9 +38,7 @@
         </h4>
         <ul class="list-group text-center">
             <li class="list-group-item"><?php echo $activity_category; ?> </li>
-            <li class="list-group-item">Approval of budget</li>
-            <li class="list-group-item">Election of directors</li>
-            <li class="list-group-item">Supper</li>
+
         </ul>
         <p>
             <a class="btn btn-primary" href="#" role="button">View details »</a>
@@ -57,8 +55,8 @@
     <div class="col-md-12">
         <hr>
         <div >
-            <a href="http://hamiltonbroadway.com/" style="display: block;" target="_blank">
-                <object type="text/html" data="http://hamiltonbroadway.com/"  width="800px"  class="img-responsive img-rounded center-block grayscale" alt="" style="pointer-events: none;"/ >
+            <a href=<?php echo $activity_url ;?> style="display: block;" target="_blank">
+                <object type="text/html" data=<?php echo $activity_url ;?>  width="800px"  class="img-responsive img-rounded center-block grayscale" alt="" style="pointer-events: none;"/ >
             </a>
         </object>
         </div>

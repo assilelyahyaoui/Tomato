@@ -6,7 +6,8 @@
   <h1>Add an Activity</h1>
 </head>
 
-<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="./css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="index.css">
 
 
 <body>
@@ -26,8 +27,8 @@
     <div class="form-group">
         <label for="activity_category">Activity Category</label>
         <select class="form-control" id="activity_category" name = "activity_category" placeholder="Choose Activity Category" required>
-          <option>1</option>
-          <option>2</option>
+          <option>Historical</option>
+          <option>Artistic</option>
           <option>3</option>
           <option>4</option>
           <option>5</option>
@@ -51,12 +52,12 @@
 
     <div class="form-group">
       <label for="activity-price">Activity Price in €</label>
-      <input type="number" class="form-control" id="activity-price" name="activity_price" placeholder="Enter Assumed Price"   required>
+      <input type="number" class="form-control" id="activity_price" name="activity_price" placeholder="Enter Assumed Price"   required>
     </div>
 
     <div class="form-group">
       <label for="activity-address">Activity Address</label>
-      <textarea class="form-control" id="activity-address"  rows="4" name="activity_address" placeholder="Enter Activity Address" >
+      <textarea class="form-control" id="activity_address"  rows="4" name="activity_address" placeholder="Enter Activity Address" >
 
       </textarea>
     </div>
@@ -64,7 +65,7 @@
 
     <div class="form-group">
       <label for="activity-url" >Activity Official Website</label>
-      <input type="url" class="form-control" id="activity-url"  name="activity_url" placeholder="Enter Activity Website To Get More Information " >
+      <input type="url" class="form-control" id="activity_url"  name="activity_url" placeholder="Enter Activity Website To Get More Information " >
     </div>
 
 

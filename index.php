@@ -1,4 +1,4 @@
-<?php
+<?php 
 
-	require_once('./View/addActivity.php');
+	require_once("View/addActivity.php");
  ?>
