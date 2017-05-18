@@ -1,4 +1,3 @@
-<?php 
-
-	require_once("View/addActivity.php");
+<?php
+	require_once("Model/index-Controller.php");
  ?>

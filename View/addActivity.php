@@ -12,7 +12,11 @@
 
 <body>
 
-  <form action = "./Controller/activity-controller.php" method="post">
+  <form action = "./Controller/addActivity-controller.php" method="post">
+    <div class="form-group">
+      <label for="activity_user_name">Name Of Activity Creator</label>
+      <input type="text" class="form-control" id="activity_user_name"  name="activity_user_name" placeholder="Enter Your Name" required>
+    </div>
 
     <div class="form-group">
       <label for="activity_name">Activity Name</label>
@@ -29,9 +33,6 @@
         <select class="form-control" id="activity_category" name = "activity_category" placeholder="Choose Activity Category" required>
           <option>Historical</option>
           <option>Artistic</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
         </select>
     </div>
 
