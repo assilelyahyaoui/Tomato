@@ -26,17 +26,38 @@ function addCity($city)
 #Post: adds the city to the database CHECK
 { echo "ici   ";
    require_once("../Model/PDO.php");
-   echo "bcconnection   ";
+   echo "bfconnection|||   ";
 
     $bd = connection();
-echo "afconnection   ";
+echo "afconnection ||  ";
   //  $ajout = $bd->prepare( "INSERT INTO activity
     //    VALUES ('".$activity_name."','".$activity_price."','"pending"','".$activity_url."','".$activity_address."','0')");
+//$qr = $bd->query("select * from Player");
 
-    $add = $bd->prepare( "INSERT INTO city
-        VALUES ('".$activity_city."");
+  //$result = pg_exec($bd, "select * from player");
+  //$result = pg_query($bd,"SELECT * FROM city");
+  //echo "lolol   ";
 
-    $add->execute();
-    return 0;
+
+  //  echo "postreds   ";
+
+
+    //var_dump(pg_fetch_all($result));
+    // $add = $bd->prepare( "INSERT INTO city
+    //     VALUES ('".$activity_city."");
+    $result = $bd->query("SELECT *  FROM Player ");
+    echo "after query  ||   ";
+
+    $donnees = $result->fetch();
+    echo "after query fetch ||   ";
+
+    $result->closeCursor();
+    echo "resultats :";
+
+    echo $donnees['cpt'];
+    echo "fin result ";
+    return $donnees['cpt'];
+
+
 }
  ?>
