@@ -42,7 +42,7 @@
 
         </ul>
         <p>
-            <a class="btn btn-primary" href="#" role="button">View details »</a>
+            <a class="btn btn-primary" href="#" role="button">Vote »</a>
         </p>
     </div><!--/. col-md -->
 

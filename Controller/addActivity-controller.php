@@ -13,9 +13,18 @@
 
 		require_once('../Model/city-Model.php');
 		require_once('../Model/activity-Model.php');
+		require_once('../Model/category-Model.php');
+		require_once('../Model/grade-Model.php');
+		require_once('../Model/groupOfPeople-Model.php');
+
+		echo "llslslls";
+		echo addGroup('lalaww', 'ouiousi');
+		echo "cndk";
 
 		addCity($activity_city);
 		addActivity($activity_name, $activity_price, $activity_url,$activity_address);
+
+
 
 
 		require('../View/activity.php');

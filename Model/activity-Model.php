@@ -1,6 +1,5 @@
 <?php
 
-echo "model activity";
 
 function existsActivity($activity_name, $activity_price, $activity_url,$activity_address){
 //return false if the city name dosent exist in the db. true otherwise
@@ -29,7 +28,7 @@ function addActivity($activity_name, $activity_price, $activity_url,$activity_ad
 
 require_once("../Model/PDO.php");
 $UCactivityname= strtoupper($activity_name);
-echo $UCactivityname;
+
 $exists = existsActivity($UCactivityname, $activity_price, $activity_url,$activity_address);
 
     if(!$exists){
@@ -37,8 +36,6 @@ $exists = existsActivity($UCactivityname, $activity_price, $activity_url,$activi
 
      $add = $bd->prepare( "INSERT INTO activity(nameactivity, priceactivity, websiteactivity, addressactivity)
           VALUES ('$UCactivityname','$activity_price','$activity_url','$activity_address') " );
-          echo "dans boucle";
-
       $add->execute();
      }//if
     return 0;
@@ -82,21 +79,36 @@ $exists = existsActivity($UCactivityname, $activity_price, $activity_url,$activi
 
 
       $data = $result->fetch();
-
       $result->closeCursor();
-
-
       }//if
-
     return $data['ida'] ;
-
   }//getActivityID
 
+function getActivityScore($activity_id){
+
+    require_once("PDO.php");
+      $db = connection();
+
+      $result = $db->query("SELECT scoreactivity as score
+                            FROM activity
+                            WHERE idactivity='$activity_id';");
+      $data = $result->fetch();
+      $result->closeCursor();
+      return $data['score'];
 
 
+  }
 
+  function setActivityScore($activity_id,$newscore){
 
+    require_once("../Model/PDO.php");
 
+        $bd = connection();
+        $add = $bd->exec( " UPDATE activity SET scoreactivity='$newscore' WHERE idactivity='$activity_id' ;" );
+
+    return 0;
+
+  }
 
 
 

@@ -1,6 +1,5 @@
 
 
-//pdo
 
 <?php
 function connection()
@@ -18,4 +17,3 @@ function connection()
     return ($bd);
   }
 ?>
-//endPDO

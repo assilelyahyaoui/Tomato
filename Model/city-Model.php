@@ -20,13 +20,11 @@ function addCity($city_name)
 #Post: ajoute l'étudiant à la base de données
 {
    require_once("../Model/PDO.php");
-   //require_once("./Model/city-Model.php");
 
   $uccityname = strtoupper($city_name);
   $exists = existsCity($uccityname) ;
 
 
-//  echo existsCity($uccityname);
   if (!$exists){
     $bd = connection();
     $add = $bd->prepare( " INSERT INTO  city(namecity) VALUES ('$uccityname') ");
@@ -49,6 +47,29 @@ function removeCityByName($city_name)
 
 
 }
+
+
+function getCityID($city_name){
+
+  require_once("../Model/PDO.php");
+  $db = connection();
+
+  $UCcityname= strtoupper($city_name);
+  $exists = existsCity($UCcityname);
+
+  if($exists){
+    $result = $db->query("SELECT idcity AS idc
+                          From city
+                          where namecity='$UCcityname';");
+
+    $data = $result->fetch();
+    $result->closeCursor();
+  }//if
+return $data['idc'] ;
+}//getCityID
+
+
+
 /*
 
 function getAllCitiesID($city)
