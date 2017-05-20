@@ -3,7 +3,8 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="../view/activity.css">
-<link href="../css/bootstrap.css" rel="stylesheet">
+<link href="../View/css/bootstrap.css" rel="stylesheet">
+<?php //require_once( '../View/navBar.php'); ?>
 
 <title>Activity synopsis</title>
 </head>

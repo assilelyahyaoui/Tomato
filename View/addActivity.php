@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+<?php require_once( './View/navBar.php'); ?>
 
 <head>
+
   <title>Add Activity</title>
   <h1>Add an Activity</h1>
 </head>
@@ -11,7 +13,6 @@
 
 
 <body>
-
   <form action = "./Controller/addActivity-controller.php" method="post">
     <div class="form-group">
       <label for="activity_user_name">Name Of Activity Creator</label>

@@ -1,63 +1,76 @@
 <?php
 
-/*
-function addActivity($activity_name, $activity_price, $activity_url,$activity_address,$grade)
+function existsCity($cityname){
+//return false if the city name dosent exist in the db. true otherwise
+  $UCcityname= strtoupper($cityname);
+  require_once("../Model/PDO.php");
+
+      $bd = connection();
+      $result = $bd->query("SELECT COUNT(*) as nb FROM city WHERE namecity='$UCcityname'");
+      $donnees = $result->fetch();
+      $result->closeCursor();
+
+  if ($donnees['nb'] == 0 ){ return false;}
+  else if ($donnees['nb'] > 0 ) {return true;}
+
+}
+
+function addCity($city_name)
 #Donnée: Email (chaine de char) de l'étudiant, un mdp haché, nom(char) et prénom(char) de l'étudiant ainsi que sa promo (int = idPromo)
 #Post: ajoute l'étudiant à la base de données
 {
-    require_once("pdo.php");
-    $bd = connexion();
+   require_once("../Model/PDO.php");
+   //require_once("./Model/city-Model.php");
 
-  //  $ajout = $bd->prepare( "INSERT INTO activity
-    //    VALUES ('".$activity_name."','".$activity_price."','"pending"','".$activity_url."','".$activity_address."','0')");
+  $uccityname = strtoupper($city_name);
+  $exists = existsCity($uccityname) ;
 
-    $add = $bd->prepare( "INSERT INTO city
-        VALUES ('".$activity_city."");
 
+//  echo existsCity($uccityname);
+  if (!$exists){
+    $bd = connection();
+    $add = $bd->prepare( " INSERT INTO  city(namecity) VALUES ('$uccityname') ");
     $add->execute();
+  }//if
+  return 0;
 }
-//
-// exist activity
-// creer fonction qui sot le plus grqnd id ui existe
-// change condition
-*/
-function addCity($city)
+
+function removeCityByName($city_name)
+#parameters : string name of the city
+#post : removes the city matching the city naame in the parameters from the database
+{
+  $uccityname = strtoupper($city_name);
+  require_once("../Model/PDO.php");
+  $db = connection();
+  $delete= $db->prepare("DELETE FROM city WHERE namecity ='$uccityname' ");
+
+  $delete -> execute();
+  return 0;
+
+
+}
+/*
+
+function getAllCitiesID($city)
+##hastobechecked
 #Donnée: Email (chaine de char) de l'étudiant, un mdp haché, nom(char) et prénom(char) de l'étudiant ainsi que sa promo (int = idPromo)
 #Post: adds the city to the database CHECK
-{ echo "ici   ";
+{
    require_once("../Model/PDO.php");
-   echo "bfconnection|||   ";
+
 
     $bd = connection();
-echo "afconnection ||  ";
-  //  $ajout = $bd->prepare( "INSERT INTO activity
-    //    VALUES ('".$activity_name."','".$activity_price."','"pending"','".$activity_url."','".$activity_address."','0')");
-//$qr = $bd->query("select * from Player");
-
-  //$result = pg_exec($bd, "select * from player");
-  //$result = pg_query($bd,"SELECT * FROM city");
-  //echo "lolol   ";
-
-
-  //  echo "postreds   ";
-
-
-    //var_dump(pg_fetch_all($result));
-    // $add = $bd->prepare( "INSERT INTO city
-    //     VALUES ('".$activity_city."");
-    $result = $bd->query("SELECT *  FROM Player ");
-    echo "after query  ||   ";
-
+    $result = $bd->query("SELECT *  FROM city ");
     $donnees = $result->fetch();
-    echo "after query fetch ||   ";
-
     $result->closeCursor();
-    echo "resultats :";
 
-    echo $donnees['cpt'];
-    echo "fin result ";
-    return $donnees['cpt'];
+
+    return $donnees['idcity'];
 
 
 }
- ?>
+
+*/
+
+//change state
+// check if city exists*/  ?>
