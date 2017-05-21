@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php require_once( './View/navBar.php'); ?>
+<?php header("Location: ./View/navBar.php"); /*require_once( './View/navBar.php');*/ ?>
 
 <head>
 
@@ -8,8 +8,8 @@
   <h1>Add an Activity</h1>
 </head>
 
-<link href="./css/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="index.css">
+<link href="./View/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./View/index.css">
 
 
 <body>
