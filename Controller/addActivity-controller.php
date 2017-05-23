@@ -13,23 +13,14 @@
 
 		require_once('../Model/city-Model.php');
 		require_once('../Model/activity-Model.php');
-		require_once('../Model/category-Model.php');
-		require_once('../Model/grade-Model.php');
-		require_once('../Model/groupOfPeople-Model.php');
-		require_once('../Model/tied-Model.php');
-		require_once('../Model/person-Model.php');
-
-
-
+	
 
 
 		addCity($activity_city);
 		addActivity($activity_name, $activity_price, $activity_url,$activity_address);
 
 
-		echo "allties";
-		//echo addPerson('elyahyaouiadddssil@hotmail.com' ,'EL YdAHYAOUI','ASdsSIL' , 'LALLdLA','BLsACK');
-		echo getEmail(1);
+
 
 		require('../View/activity.php');
 

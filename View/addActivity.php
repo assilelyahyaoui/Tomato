@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php header("Location: ./View/navBar.php"); /*require_once( './View/navBar.php');*/ ?>
+<?php require_once( './View/navBar.php'); ?>
 
 <head>
 
@@ -8,8 +8,14 @@
   <h1>Add an Activity</h1>
 </head>
 
+
+<!-- jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./View/css/jquery-ui.min.css">
+<script src="./View/css/jquery-ui.min.js"></script>
+
 <link href="./View/css/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="./View/index.css">
+<link rel="stylesheet" type="text/css" href="./View/css/addActivity.css">
 
 
 <body>

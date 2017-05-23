@@ -20,8 +20,39 @@ function existsPerson($person_email, $person_name, $person_firstname,$person_pas
 
       $result->closeCursor();
 
-      echo "dddddd";
+  if ($data['nb'] == 0 ){return 0;}
+  else if ($data['nb'] > 0 ) {return 1;}
 
+}//existsPerson
+
+function existsEmail($person_email){
+
+  require_once("../Model/PDO.php");
+      $db = connection();
+      $result = $db->query("SELECT count(*) as nb
+                            FROM person
+                            WHERE emailperson='$person_email';");
+
+
+      $data = $result->fetch();
+      $result->closeCursor();
+
+  if ($data['nb'] == 0 ){return 0;}
+  else if ($data['nb'] > 0 ) {return 1;}
+
+}//existsPerson
+
+function existsColor($person_color){
+
+  require_once("../Model/PDO.php");
+      $db = connection();
+      $result = $db->query("SELECT count(*) as nb
+                            FROM person
+                            WHERE colorperson='".$person_color."';");
+
+
+      $data = $result->fetch();
+      $result->closeCursor();
   if ($data['nb'] == 0 ){return 0;}
   else if ($data['nb'] > 0 ) {return 1;}
 
@@ -38,9 +69,10 @@ function addPerson($person_email, $person_name, $person_firstname,$person_passwo
    $UCpersonfirstname= strtoupper($person_firstname);
 
   $exists = existsPerson($person_email, $person_name, $person_firstname,$person_password, $person_color) ;
-
-
+echo $exists;
   if (!$exists){
+    echo "XXX";
+
     $bd = connection();
     $add = $bd->prepare( " INSERT INTO  person(emailperson, nameperson, firstnameperson, passwordperson, colorperson)
                           VALUES ('$person_email', '$UCpersonname', '$UCpersonfirstname','$person_password', '$person_color') ");
