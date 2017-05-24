@@ -1,3 +1,3 @@
 <?php
-	require_once("Model/index-Controller.php");
+	require_once("Controller/index-Controller.php");
  ?>

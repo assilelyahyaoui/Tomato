@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Registration</title>
-    <link href="./css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./registration.css">
-    <script type="text/javascript" src="registration.js"></script>
+    <link href="../View/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../View/registration.css">
+    <script type="text/javascript" src="../View/registration.js"></script>
 
 
   </head>

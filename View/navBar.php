@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="./View/css/navBar.css">
+    <link rel="stylesheet" type="text/css" href="../View/css/navBar.css">
 
     <nav class="navbar navbar-findcond navbar-fixed-top">
     <div class="container">
@@ -20,7 +20,7 @@
 				<span class="icon-bar"></span>
 			</button>
 
-      <img src="./View/Images/LPTomato.png" alt="LPTomato Icon" >
+      <img src="../View/Images/LPTomato.png" alt="LPTomato Icon" padding-top=10 >
 			<a class="navbar-brand" href="#">Tomato</a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbar">
@@ -34,9 +34,9 @@
 						<li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Game</span> sayfasında iletiniz beğenildi</a></li>
 					</ul>-->
 				</li>
-				<li class="active"><a href="./Controller/activity-navBar-Controller.php">Activities <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="./Controller/addActivity-navBar-Controller.php">Add Activity <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="./budget.php">Budget<span class="sr-only">(current)</span></a></li>
+				<li class="active"><a href="../Controller/activity-navBar-Controller.php">Activities <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="../Controller/addActivity-navBar-Controller.php">Add Activity <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="../Controller/budget-Controller.php">Budget<span class="sr-only">(current)</span></a></li>
 
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User <span class="caret"></span></a>

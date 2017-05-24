@@ -5,27 +5,26 @@
     <title>Sign In</title>
     <!-- jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="./css/jquery-ui.min.css">
-    <script src="./css/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="signIn.js"></script>
-
+    <link rel="stylesheet" href="./View/css/jquery-ui.min.css">
+    <script src="./View/css/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./View/signIn.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./signIn.css">
-    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./View/signIn.css">
+    <link href="./View/css/bootstrap.css" rel="stylesheet">
 
   </head>
   <body>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="pr-wrap">
-                    <!-- <div class="pass-reset">
+                <!--<div class="pr-wrap">
+                     <div class="pass-reset">
                         <label>  Enter the email you signed up with</label>
                         <input type="email" placeholder="Email" id="signInReset-email" />
                         <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" id="signInReset-password"/>
-                    </div> -->
-                </div>
+                    </div>
+                </div>-->
                 <div class="wrap">
                     <p class="form-title"> Sign In</p>
 
@@ -50,11 +49,11 @@
                                         Remember Me
                                     </label>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="col-md-6 forgot-pass-content">
-                                <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
+                                <a href="./Controller/signUp-Controller.php" class="Sign Up">Sign Up!</a>
                             </div>
-                        </div>
+                      <!--  </div>
                     </div> -->
                     </form>
                 </div>

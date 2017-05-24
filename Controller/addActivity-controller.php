@@ -13,8 +13,7 @@
 
 		require_once('../Model/city-Model.php');
 		require_once('../Model/activity-Model.php');
-
-
+		
 		addCity($activity_city);
 		addActivity($activity_name, $activity_price, $activity_url,$activity_address);
 

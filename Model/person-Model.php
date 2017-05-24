@@ -107,11 +107,12 @@ function getPassword($person_email){
   $db = connection();
   $result = $db->query("SELECT passwordperson as idp
                         FROM person
-                        where emailperson= '$person_email';
+                        WHERE emailperson= '$person_email';
                         ");
-
   $data = $result->fetch();
+
   $result->closeCursor();
+
   return $data['idp'];
 }//getAllgroup
 
@@ -121,7 +122,7 @@ function getEmail($person_id){
   $db = connection();
   $result = $db->query("SELECT emailperson as ide
                         FROM person
-                        WHERE idperson = $person_id;
+                        WHERE idperson = '$person_id';
                         ");
 
   $data = $result->fetch();

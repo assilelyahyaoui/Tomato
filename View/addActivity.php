@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<?php require_once( './View/navBar.php'); ?>
 
 <head>
 
   <title>Add Activity</title>
-  <h1>Add an Activity</h1>
+  <?php include_once( './View/navBar.php'); ?>
+
 </head>
 
 
@@ -19,7 +19,9 @@
 
 
 <body>
-  <form action = "./Controller/addActivity-controller.php" method="post">
+  <h1>Add an Activity</h1>
+
+  <form action = "../Controller/addActivity-controller.php" method="post">
     <div class="form-group">
       <label for="activity_user_name">Name Of Activity Creator</label>
       <input type="text" class="form-control" id="activity_user_name"  name="activity_user_name" placeholder="Enter Your Name" required>
