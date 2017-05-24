@@ -11,11 +11,10 @@ $person_color=$_POST["person_color"];
 require_once('../Model/person-Model.php');
 
 
+
 $exmail =  existsEmail($person_email);
-
-echo $person_color;
-
 $excolor = existsColor($person_color);
+echo "password".$person_password."||||||||";
 
 
 if ($person_password != $person_password2){
@@ -23,12 +22,32 @@ if ($person_password != $person_password2){
 
 }
 
-if (!$exmail && !$excolor) {
+else if (!$exmail && !$excolor) {
   echo "cest bon";
-  addPerson($person_email, $person_name, $person_firstname,$person_password, $person_color);
+
+  $saltAlg="$2a$0"; // salt algorithm
+  $saltiterationCount= rand(01,10); // salt iteration count
+
+  echo $saltiterationCount;
+  echo "||||||  saltcharacters";
+
+  $saltdollar="$";
+  $saltcharacters= bin2hex(random_bytes(20)); // salt characters
+  echo $saltcharacters;
+  echo "|||||| salt					";
+
+   $salt = $saltAlg.$saltiterationCount.$saltdollar.$saltcharacters; // concatenation
+   echo $salt ;
+   $digest = crypt($person_password, $salt);
+   echo "|||||||||digest";
+   echo $digest;
+
+  addPerson($person_email, $person_name, $person_firstname,$digest, $person_color);
+
+
 }//if
 else{
-  if ($exmail) {  echo "wesh le mail existe";}
+  if ($exmail) {  echo "le mail existe";}
   if($excolor) {echo "another color";}
 }//else
 

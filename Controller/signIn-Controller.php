@@ -1,14 +1,21 @@
 <?php
 
-$signIn_email = $_POST["signInReset-email"];
+$signIn_email = $_POST["signIn-email"];
 $signIn_password=$_POST["signIn-password"];
-$activity_user_name = $_POST["activity_user_name"];
 
-
-
-echo "OPO";
+require_once('../Model/person-Model.php');
 var_dump( $signIn_email);
-echo "PIPO";
-var_dump (		$activity_user_name) ;
+var_dump ($signIn_password) ;
+
+$lala=getPassword('$signIn_email');
+echo "fjskno;jrf;sfh;z";
+var_dump($lala);
+
+
+//    $truth=0;
+//    $hashpass =
+//    if ( crypt($person_password, $digest) == $digest ){ $truth=1;};
+// echo "|||||| reponse : ";
+// echo $truth;
 
  ?>

@@ -1,3 +1,4 @@
+uib
 <?php
 
 
@@ -100,13 +101,13 @@ function getAllGroupofPerson($person_id){
   return $result;
 }//getAllgroup
 
-function getPassword($person_id){
+function getPassword($person_email){
 
   require_once("../Model/PDO.php");
   $db = connection();
   $result = $db->query("SELECT passwordperson as idp
                         FROM person
-                        WHERE idperson = $person_id;
+                        where emailperson= '$person_email';
                         ");
 
   $data = $result->fetch();

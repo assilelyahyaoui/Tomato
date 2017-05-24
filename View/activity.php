@@ -2,9 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <?php //require_once( '../View/navBar.php'); ?>
+
 <link rel="stylesheet" type="text/css" href="../view/activity.css">
 <link href="../View/css/bootstrap.css" rel="stylesheet">
-<?php //require_once( '../View/navBar.php'); ?>
 
 <title>Activity synopsis</title>
 </head>

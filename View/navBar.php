@@ -34,8 +34,9 @@
 						<li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Game</span> sayfasında iletiniz beğenildi</a></li>
 					</ul>-->
 				</li>
-				<li class="active"><a href="#">Activities <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="#">Add Activity <span class="sr-only">(current)</span></a></li>
+				<li class="active"><a href="./Controller/activity-navBar-Controller.php">Activities <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="./Controller/addActivity-navBar-Controller.php">Add Activity <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="./budget.php">Budget<span class="sr-only">(current)</span></a></li>
 
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User <span class="caret"></span></a>

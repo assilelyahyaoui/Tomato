@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <title>Budget</title>
@@ -9,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/jquery-ui.min.css">
     <script src="./css/jquery-ui.min.js"></script>
+ <?php    include_once('./View/navBar.php') ?>
   </head>
 
   <body class="dad">
@@ -16,7 +18,7 @@
     <div class="row" style="margin: 60px 0; text-align: center;">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<p style="color: #c10b0b; font-weight: 700; font-size: 36px; font-family: 'Karla', san-serif;">Budget per Category<span style="font-size: 50px; font-family: 'Karla', san-serif;">
-          <br/><?php require_once('../Model/category-Model.php');
+          <br/><?php require_once('./Model/category-Model.php');
                 echo "Total:".getSumCategoryBudget()."$" ?></span></p>
 		</div>
 	</div>

@@ -110,6 +110,21 @@ function getActivityScore($activity_id){
 
   }
 
+  function FindActivityCategory($activity_id){
 
+  require_once("../Model/PDO.php");
+        $db = connection();
+       $result = $db->query("SELECT idcategory as cat
+                             FROM activity,categorized
+                             WHERE activity.idactivity = categorized.idactivity
+                             AND activity.idactivity=$activity_id ; ");
+
+
+       $data = $result->fetch();
+       $result->closeCursor();
+
+       return $data['cat'];
+
+  }
 
   ?>
