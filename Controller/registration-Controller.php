@@ -7,14 +7,12 @@ $person_firstname=$_POST["person_firstname"];
 $person_name=$_POST["person_name"];
 $person_color=$_POST["person_color"];
 
-echo "lalal";
-
 require_once('../Model/person-Model.php');
 
  var_dump( $person_password);
 
  $exmail =  existsEmail($person_email);
-$excolor = existsColor($person_color);
+ $excolor = existsColor($person_color);
 
 if ($person_password != $person_password2){
   echo "not the same || ";
