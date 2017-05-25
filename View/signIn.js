@@ -1,16 +1,5 @@
 $(document).ready(function () {
-   $('.forgot-pass').click(function(event) {
-     $(".pr-wrap").toggleClass("show-pass-reset");
-   });
-
-   $('.pass-reset-submit').click(function(event) {
-     $(".pr-wrap").removeClass("show-pass-reset");
-   });
-
-
-   <div class="col-md-6 forgot-pass-content">
-      <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
-    </div>
+  
    function checkPassSame() {
 // check if both password are the same
       var person_email = document.getElementById("person_email").value;
@@ -25,6 +14,4 @@ $(document).ready(function () {
               alert("Passwords are not the same");
           }
         }
-
-
 });

@@ -7,9 +7,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./View/css/jquery-ui.min.css">
     <script src="./View/css/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="./View/signIn.js"></script>
+  <!--  <script type="text/javascript" src="./View/signIn.js"></script>-->
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="./View/signIn.css">
     <link href="./View/css/bootstrap.css" rel="stylesheet">
 
@@ -40,21 +40,11 @@
                       <button type="submit" class="btn btn-primary">Sign in </button>
 
                     </div>
-                    <!-- <div class="remember-forgot">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" />
-                                        Remember Me
-                                    </label>
-                                </div>
-                            </div>-->
-                            <div class="col-md-6 forgot-pass-content">
+
+
                                 <a href="./Controller/signUp-Controller.php" class="Sign Up">Sign Up!</a>
-                            </div>
-                      <!--  </div>
-                    </div> -->
+
+
                     </form>
                 </div>
             </div>
