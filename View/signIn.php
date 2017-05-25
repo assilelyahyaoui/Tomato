@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./View/css/jquery-ui.min.css">
     <script src="./View/css/jquery-ui.min.js"></script>
-  <!--  <script type="text/javascript" src="./View/signIn.js"></script>-->
+    <script type="text/javascript" src="./View/signIn.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="./View/signIn.css">
@@ -41,9 +41,9 @@
 
                     </div>
 
-
+                            <div class="col-md-6 forgot-pass-content">
                                 <a href="./Controller/signUp-Controller.php" class="Sign Up">Sign Up!</a>
-
+                            </div>
 
                     </form>
                 </div>
