@@ -97,7 +97,63 @@ function getActivityScore($activity_id){
       return $data['score'];
 
 
-  }
+  }//getActivityScore
+
+  function getActivityAdress($activity_id){
+
+      require_once("PDO.php");
+        $db = connection();
+
+        $result = $db->query("SELECT adressActivity as a
+                              FROM activity
+                              WHERE idactivity='$activity_id';");
+        $data = $result->fetch();
+        $result->closeCursor();
+        return $data['a'];
+    }//getActivityAdress
+
+    function getActivityPrice($activity_id){
+
+        require_once("PDO.php");
+          $db = connection();
+
+          $result = $db->query("SELECT priceActivity as price
+                                FROM activity
+                                WHERE idactivity='$activity_id';");
+          $data = $result->fetch();
+          $result->closeCursor();
+          return $data['price'];
+      }//getActivityPrice
+
+      function getActivityNbVotes($activity_id){
+
+          require_once("PDO.php");
+            $db = connection();
+
+            $result = $db->query("SELECT nbVotes as nb
+                                  FROM activity
+                                  WHERE idactivity='$activity_id';");
+            $data = $result->fetch();
+            $result->closeCursor();
+            if ($data['nb']==NULL){return 0;}
+            else{return $data['nb'];}
+        }//getActivitynbPeople
+
+
+  function getActivityName($activity_id){
+
+      require_once("PDO.php");
+        $db = connection();
+
+        $result = $db->query("SELECT nameactivity as name
+                              FROM activity
+                              WHERE idactivity='$activity_id';");
+        $data = $result->fetch();
+        $result->closeCursor();
+        return $data['name'];
+
+
+    }//getActivityScore
 
   function setActivityScore($activity_id,$newscore){
 

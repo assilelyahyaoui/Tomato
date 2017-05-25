@@ -129,6 +129,20 @@ function getEmail($person_id){
   return $data['ide'];
 }//getAllgroup
 
+function getId($person_email){
+
+  require_once("../Model/PDO.php");
+  $db = connection();
+  $result = $db->query("SELECT idperson  as idp
+                        FROM person
+                        WHERE emailperson = '$person_email';
+                        ");
+
+  $data = $result->fetch();
+  $result->closeCursor();
+  return $data['idp'];
+}//getAllgroup
+
 
 
  ?>

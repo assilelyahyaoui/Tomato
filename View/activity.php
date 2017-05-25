@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php //require_once( '../View/navBar.php'); ?>
+  <?php require_once( '../View/navBar.php'); ?>
 
 <link rel="stylesheet" type="text/css" href="../view/activity.css">
 <link href="../View/css/bootstrap.css" rel="stylesheet">
@@ -22,23 +22,18 @@
         <?php echo $activity_name; ?>
     </h2>
 
-    <div class="col-md-1">
+    <!-- <div class="col-md-1">
         <br>
         <p class="calendar">
-            15<em>March</em>
+            <?php //echo $activity_price; ?><em>$</em>
         </p>
-    </div><!--./col-md-->
+    </div>./col-md-->
 
     <div class="col-md-6">
         <h3>
             <?php echo $activity_city; ?>
         </h3>
-        <p>
-            Sample of date display with sample layout. Note image changes color on mouse over and is responsive.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque ultricies libero, in lacinia lacus mattis eget. Donec in libero quis ligula dictum lobortis. Donec hendrerit, enim ut pulvinar dapibus, tortor dui blandit nunc, non varius lorem mi at augue. Nam dictum tellus porta metus laoreet, fermentum facilisis nunc suscipit. Phasellus pharetra nibh at tortor congue porttitor.
-        </p>
+
         <h4>
             Category
         </h4>
@@ -46,6 +41,32 @@
             <li class="list-group-item"><?php echo $activity_category; ?> </li>
 
         </ul>
+
+        <h4>
+            Estimated Price
+        </h4>
+        <ul class="list-group text-center">
+            <li class="list-group-item"><?php echo $activity_price." $"; ?> </li>
+
+        </ul>
+
+        <h4>
+            Current Score
+        </h4>
+        <ul class="list-group text-center">
+            <li class="list-group-item"><?php echo $activity_score; ?> </li>
+
+        </ul>
+
+        <h4>
+            Number Of People That Voted
+        </h4>
+        <ul class="list-group text-center">
+            <li class="list-group-item"><?php echo $activity_nbVotes; ?> </li>
+
+        </ul>
+
+
 
         <div class="v-wrap" style="display:none">
              <div class="vote-options">
@@ -67,7 +88,7 @@
         </div>
 
         <p>  <div class="col-md-6 vote-content">
-              <a class="btn btn-primary" class="votenow" href="javascription:void(0)" role="button">Vote »</a>
+              <a class="btn btn-primary" class="votenow"  href="javascription:void(0)" role="button">Vote »</a>
             </div>
 
         </p>
@@ -80,6 +101,9 @@
             <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" id="signInReset-password"/>
         </div>
     </div>-->
+
+
+
     <div class="col-md-5">
         <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2948.2793897849465!2d-71.0596334!3d42.3578847!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1394254234525" width="400" height="400" style="border:0"></iframe>
     </div><!--/span-->

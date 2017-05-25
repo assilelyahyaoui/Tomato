@@ -6,6 +6,7 @@
     <link href="../View/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../View/registration.css">
     <script type="text/javascript" src="../View/js/creategroup.js"></script>
+    <?php include_once( '../View/navBar.php'); ?>
 
 
   </head>

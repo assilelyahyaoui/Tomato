@@ -36,4 +36,21 @@ $exists = existsJourney($journey_name,$group_id);
      }//if
     return 0;
 }//AddGoOn
+
+function getJourneyName($Journey_id){
+
+  require_once("../Model/PDO.php");
+  $db = connection();
+
+  $result = $db->query("SELECT namejourney AS name
+                          From journey
+                          where idjourney=$Journey_id;");
+
+  $data = $result->fetch();
+  $result->closeCursor();
+
+return $data['name'] ;
+}//getGroupname
+
+
  ?>

@@ -1,4 +1,8 @@
 <?php
+
+		   echo "cookie id person  ";
+		  var_dump( $_COOKIE['idperson'] ) ;
+
 		$activity_name = $_POST["activity_name"];
 		$activity_city =$_POST["activity_city"];
 		$activity_category =$_POST["activity_category"];
@@ -16,6 +20,14 @@
 
 		addCity($activity_city);
 		addActivity($activity_name, $activity_price, $activity_url,$activity_address);
+
+		$activity_id=getActivityID($activity_name,$activity_price, $activity_url,$activity_address);
+
+		  $activity_Total=getActivityScore($activity_id);
+		  $activity_nbVotes=getActivityNbVotes($activity_id);
+		  if ($activity_nbVotes==0){$activity_score=0;}
+		  else{$activity_score= $activity_Total/$activity_nbVotes;}
+
 
 
 

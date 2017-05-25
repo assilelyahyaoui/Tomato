@@ -35,7 +35,7 @@
          echo "digest".$digest;
         addGroup($group_name, $digest);
 
-        require_once('../View/addActivity.php');
+        require_once('../View/addJourney.php');
 
       }
 

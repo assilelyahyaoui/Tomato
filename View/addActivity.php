@@ -4,7 +4,7 @@
 <head>
 
   <title>Add Activity</title>
-  <?php include_once( './View/navBar.php'); ?>
+  <?php include_once( '../View/navBar.php'); ?>
 
 </head>
 
@@ -14,18 +14,18 @@
 <link rel="stylesheet" href="./View/css/jquery-ui.min.css">
 <script src="./View/css/jquery-ui.min.js"></script>
 
-<link href="./View/css/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="./View/css/addActivity.css">
+<link href="../View/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../View/css/addActivity.css">
 
 
 <body>
-  <h1>Add an Activity</h1>
+  <p style="color: #c10b0b; font-weight: 700; font-size: 40px; san-serif;">
+      Add An Activity
+    <span style="font-size: 30px; font-family: 'Karla', san-serif;">
+
+      <br/></span></p>
 
   <form action = "../Controller/addActivity-controller.php" method="post">
-    <div class="form-group">
-      <label for="activity_user_name">Name Of Activity Creator</label>
-      <input type="text" class="form-control" id="activity_user_name"  name="activity_user_name" placeholder="Enter Your Name" required>
-    </div>
 
     <div class="form-group">
       <label for="activity_name">Activity Name</label>
@@ -79,7 +79,7 @@
     </div>
 
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger">Submit</button>
   </form>
 
 

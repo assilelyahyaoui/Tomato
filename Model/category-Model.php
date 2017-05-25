@@ -73,6 +73,22 @@
     return $data['idc'] ;
   }//getCategoryID
 
+  function getCategoryName($category_id){
+
+    require_once("../Model/PDO.php");
+    $db = connection();
+
+
+      $result = $db->query("SELECT namecategory AS idn
+                            From category
+                            where idcategory=$category_id;");
+
+      $data = $result->fetch();
+      $result->closeCursor();
+
+  return $data['idn'] ;
+}//getCategoryname
+
 
     function getCategoryBudget($category_id){
 

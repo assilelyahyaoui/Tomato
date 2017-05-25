@@ -43,8 +43,7 @@ function getAllGoOn(){
   $db = connection();
   $result = $db->query("SELECT idgroup as idg, idjourney as idj
                         FROM goOn;
-                        ");  echo "|||||";
-
+                        ");
 
   // while ($data= $result->fetch()){
   //
@@ -54,6 +53,20 @@ function getAllGoOn(){
   return $result;
 }//getAllGoOn
 
+function getAllGoOnByGroup($group_id){
+   require_once("../Model/PDO.php");
+  $db = connection();
+  $result = $db->query("SELECT idjourney as idj
+                        FROM goOn
+                        WHERE idgroup = $group_id;
+                        ");
 
+
+//  while ($data= $result->fetch()){
+    // echo 2;
+	  // echo $data['idj'];
+	//}//while
+  return $result;
+}//getAllGoOnByGroup
 
  ?>

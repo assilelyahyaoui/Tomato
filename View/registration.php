@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title>Registration</title>
     <link href="../View/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../View/registration.css">
-    <script type="text/javascript" src="../View/registration.js"></script>
+    <link rel="stylesheet" type="text/css" href="../View/css/registration.css">
+    <script type="text/javascript" src="../View/js/registration.js"></script>
+    <?php include_once( '../View/navBar.php'); ?>
+
 
 
   </head>

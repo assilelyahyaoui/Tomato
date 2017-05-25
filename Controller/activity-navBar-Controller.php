@@ -1,1 +1,1 @@
-<?php 		require('../View/activity.php'); ?>
+<?php 		require('../View/Chooseactivity.php'); ?>
