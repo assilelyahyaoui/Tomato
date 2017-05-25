@@ -20,7 +20,7 @@
 				<span class="icon-bar"></span>
 			</button>
 
-      <img src="../View/Images/LPTomato.png" alt="LPTomato Icon" padding-top=10 >
+      <img src="../View/Images/lPTomato.png" alt="LPTomato Icon" padding-top=10 >
 			<a class="navbar-brand" href="#">Tomato</a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbar">
@@ -44,9 +44,9 @@
         <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Change <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="../Controller/chooseGroup-controller.php">Trip</a></li>
+						<li><a href="../Controller/chooseGroup-Controller.php">Trip</a></li>
             <li class="divider"></li>
-						<li><a href="../Controller/group-Navbar-controller.php">Group</a></li>
+						<li><a href="../Controller/group-navbar-controller.php">Group</a></li>
 
 					</ul>
 				</li>
@@ -54,9 +54,9 @@
         <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Create New<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="../Controller/addActivity-navbar-Controller.php">Activity</a></li>
+						<li><a href="../Controller/addActivity-navBar-Controller.php">Activity</a></li>
             <li class="divider"></li>
-						<li><a href="../Controller/registration-controller.php">Group</a></li>
+						<li><a href="../Controller/registration-Controller.php">Group</a></li>
             <li class="divider"></li>
 						<li><a href="../Controller/chooseGroup-Controller.php">Trip</a></li>
 					</ul>
