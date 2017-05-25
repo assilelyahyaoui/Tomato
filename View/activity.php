@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php require_once( '../View/navBar.php'); ?>
+  <?php //require_once( '../View/navBar.php'); ?>
 
 <link rel="stylesheet" type="text/css" href="../view/activity.css">
 <link href="../View/css/bootstrap.css" rel="stylesheet">

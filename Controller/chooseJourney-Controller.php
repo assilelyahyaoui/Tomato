@@ -1,6 +1,6 @@
 <?php
-  var_dump($_POST);
-  echo $group=$_POST["journey"];
+var_dump($_COOKIE['cookie']);
+  echo $journey=$_POST["journey"];
 
   // cookie of groupe
 

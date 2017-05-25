@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^choose-group Controller/signIn-Controller.php

@@ -17,11 +17,16 @@
 
 		require_once('../Model/city-Model.php');
 		require_once('../Model/activity-Model.php');
+		require_once('../Model/categorized-Model.php');
+		require_once('../Model/category-Model.php');
+
+
 
 		addCity($activity_city);
 		addActivity($activity_name, $activity_price, $activity_url,$activity_address);
-
+		$category_id = getCategoryID($activity_category);
 		$activity_id=getActivityID($activity_name,$activity_price, $activity_url,$activity_address);
+		addCategorized($activity_id,$category_id );
 
 		  $activity_Total=getActivityScore($activity_id);
 		  $activity_nbVotes=getActivityNbVotes($activity_id);

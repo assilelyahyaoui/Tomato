@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../View/css/jquery-ui.min.css">
     <script src="../View/css/jquery-ui.min.js"></script>
-    <?php include_once( '../View/navBar.php'); ?>
+    <?php //include_once( '../View/navBar.php'); ?>
 
   </head>
 

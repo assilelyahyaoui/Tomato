@@ -28,7 +28,7 @@
                 <div class="wrap">
                     <p class="form-title"> Sign In</p>
 
-                    <form action = "./Controller/signIn-Controller.php" method="post" >
+                    <form action = "choose-group" method="post" >
                     <div class="login">
                       <input type="text" class="login" placeholder="E-mail" name ="signIn-email" id="signIn-email" />
                     </div>

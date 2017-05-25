@@ -32,7 +32,7 @@ $exists = existsGrade($activity_id, $person_id);
                            VALUES ($activity_id, $person_id,$grade) " );
        $add->execute();
      }//else
-  
+
     return 0;
 }//addGrade
 
@@ -88,8 +88,8 @@ function setGrade($activity_id, $person_id ,$newgrade){
 
 }
 
+function deleteGrade($activity_id, $person_id ){
 
 
-
-
+}
  ?>
