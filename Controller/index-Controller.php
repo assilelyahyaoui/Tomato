@@ -1,3 +1,3 @@
 <?php
-	require_once("/View/signIn.php");
+	require_once("View/signIn.php");
  ?>
