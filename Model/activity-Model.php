@@ -127,17 +127,6 @@ function getActivityScore($activity_id){
 
   }
 
-  function updateScore($activityid, $score)
-  {//Update the score
-     require_once("../Model/PDO.php");
 
-
-          $db = connection();
-          $alter = $db->exec( " UPDATE activity
-                                SET scoreactivity=scoreactivity+$score
-                                WHERE idActivity=$activityid" );
-    //    }//if
-     return 0;
-   }
 
   ?>

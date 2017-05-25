@@ -51,5 +51,20 @@ function getAllTied(){
   return $result;
   }//getAllTies
 
+  function getAllTiedByPerson($Person_id){
+
+     require_once("../Model/PDO.php");
+    $db = connection();
+    $result = $db->query("SELECT idtied as idt, idgroup as idg
+                          FROM tied
+                          WHERE idperson= $Person_id;
+                          ");
+    // while ($data= $result->fetch()){
+    //   echo $data['idt'];
+    //   echo $data['idg'];
+    // }//while
+    return $result;
+  }//getAllTiedByPerson
+
 
  ?>

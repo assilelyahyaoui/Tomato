@@ -1,6 +1,6 @@
 <?php
 
-function existsGroup( $group_name){
+function existsGroup($group_name,$group_password){
 //return false if the city name dosent exist in the db. true otherwise
 
   $UCgroupname= strtoupper($group_name);
@@ -9,6 +9,7 @@ function existsGroup( $group_name){
       $result = $db->query("SELECT count(*) as nb
                             FROM groupofpeople
                             WHERE namegroup='$UCgroupname'
+                            AND passwordgroup= '$group_password';
                             ");
 
 
@@ -115,6 +116,22 @@ return $data['name'] ;
     // };//while
     return $result;
   }//getAllgroupMemebers
+
+
+  function getGroupPassword($group_id){
+
+    require_once("../Model/PDO.php");
+    $db = connection();
+    $result = $db->query("SELECT passwordgroup as idg
+                          FROM group
+                          WHERE idGroup= $group_id;
+                          ");
+    $data = $result->fetch();
+
+    $result->closeCursor();
+
+    return $data['idg'];
+  }//getPassword
 
 
  ?>

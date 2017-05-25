@@ -1,4 +1,3 @@
-uib
 <?php
 
 
@@ -114,7 +113,7 @@ function getPassword($person_email){
   $result->closeCursor();
 
   return $data['idp'];
-}//getAllgroup
+}//getPassword
 
 function getEmail($person_id){
 

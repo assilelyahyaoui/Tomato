@@ -43,8 +43,10 @@ else{
   if($excolor) {echo "another color";}
 }//else
 
-require_once('../Model/activity-Model.php');
+require_once('../Model/grade-Model.php');
+  echo getGrade(3,2);
 
-var_dump (updateScore(1,3));
 require_once('../Controller/index-Controller.php');
+
+
  ?>
