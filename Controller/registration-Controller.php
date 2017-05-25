@@ -39,7 +39,7 @@ else{
   if($excolor) {echo "another color";}
 }//else
 
-require_once('../View/creategroup.php');
+require_once('../View/createGroup.php');
 
 
  ?>
