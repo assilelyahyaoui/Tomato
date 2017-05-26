@@ -28,8 +28,8 @@
 
     <?php
      require_once('../Model/has-Model.php');
-     require_once('../Model/Journey-Model.php');
-     require_once('../Model/Activity-Model.php');
+     require_once('../Model/journey-Model.php');
+     require_once('../Model/activity-Model.php');
 
     $results = getAllHasByJourney(2) ;
      while($data= $results->fetch()){
