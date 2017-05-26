@@ -1,2 +1,2 @@
 RewriteEngine on
-RewriteRule ^choose-group choose-group
+RewriteRule ^choose-group Controller/signIn-Controller.php
