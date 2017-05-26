@@ -37,7 +37,7 @@
 
 
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="text-align: center; font-size: 10px; " >
-      <form action = "../Controller/chooseGroup-Controller.php" method="post">
+      <form action = "choose-trip" method="post">
       <input type = "hidden" name= "group" value='<?php $data['idg'] ?>'  >
 				<button type ="radio"  name= "group" value='<?php echo $data['idg'] ;?>'  >
 					<a class="fig"><?php

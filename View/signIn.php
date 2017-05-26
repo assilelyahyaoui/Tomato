@@ -7,10 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="./View/css/jquery-ui.min.css">
     <script src="./View/css/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="./View/signIn.js"></script>
+    <script type="text/javascript" src="./View/js/signIn.js"></script>
 
 
-    <link rel="stylesheet" type="text/css" href="./View/signIn.css">
+    <link rel="stylesheet" type="text/css" href="./View/css/signIn.css">
     <link href="./View/css/bootstrap.css" rel="stylesheet">
 
   </head>

@@ -42,7 +42,7 @@
 
 
         <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Change <span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Switch<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="../Controller/chooseGroup-Controller.php">Trip</a></li>
             <li class="divider"></li>
@@ -58,7 +58,7 @@
             <li class="divider"></li>
 						<li><a href="../Controller/registration-Controller.php">Group</a></li>
             <li class="divider"></li>
-						<li><a href="../Controller/chooseGroup-Controller.php">Trip</a></li>
+						<li><a href="../Controller/addJouney-navbar-Controller.php">Trip</a></li>
 					</ul>
 				</li>
 

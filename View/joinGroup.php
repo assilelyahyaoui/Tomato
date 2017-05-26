@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Add a Journey</title>
+    <title>Join a group</title>
     <!-- jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../View/css/jquery-ui.min.css">
@@ -20,9 +20,16 @@
 
       <form action = "../Controller/addJourney-controller.php" method="post">
         <div class="form-group">
-          <label for="activity_user_name">Select A Name for Your Journey </label>
-          <input type="text" class="form-control" id="journey_name"  name="journey_name" placeholder="Enter A Name" required>
+          <label for="group_name">Enter the Name of your Group</label>
+          <input type="text" class="form-control" id="group_name"  name="group_name" placeholder="Enter the Group Name" required>
         </div>
+
+        <div class="form-group">
+          <label for="group_password">Enter the Group's Password </label>
+          <input type="password" class="form-control" id="group_password"  name="group_password" placeholder="Password here" required>
+        </div>
+
+
         <button type="submit" class="btn btn-danger">Submit</button>
       </form>
 

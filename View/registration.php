@@ -21,7 +21,7 @@
              <h4 style="color: #7EB59E; margin: initial; margin-bottom: 10px;">Sign Up Now</h4><hr>
             <div class="input-group margin-bottom-20">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
-                <input  size="60" maxlength="255" class="form-control" placeholder="email" name="person_email" id="person_email" type="email" required >                                                       </div>
+                <input  size="60" maxlength="255" class="form-control" placeholder="email" name="person_email" id="person_email" type="text" required >                                                       </div>
             <div class="input-group margin-bottom-20">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock mycolor"></i></span>
                 <input size="60" maxlength="255" class="form-control" placeholder="Password" name="person_password" id="person_password" type="password"  pattern=".{1,}" title="Six or more characters"required>                                    </div>

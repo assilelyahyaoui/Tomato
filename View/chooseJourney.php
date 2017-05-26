@@ -39,7 +39,7 @@
 
 
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="text-align: center; font-size: 10px; " >
-      <form action = "../Controller/chooseJourney-Controller.php" method="post">
+      <form action = "choose-Activity" method="post">
       <input type = "hidden" name= "group" value='<?php $data['idj'] ?>'  >
 				<button type ="radio"  name= "group" value='<?php echo $data['idj'] ;?>'  >
 					<a class="fig"><?php

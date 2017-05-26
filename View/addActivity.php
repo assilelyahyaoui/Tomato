@@ -29,7 +29,7 @@
 
     <div class="form-group">
       <label for="activity_name">Activity Name</label>
-      <input type="text" class="form-control" id="activity_name"  name="activity_name" placeholder="Enter Activity Name" required>
+      <input type="text" class="form-control" id="activity_name"  name="activity_name" placeholder="Enter Activity Name" >
     </div>
 
     <div class="form-group">

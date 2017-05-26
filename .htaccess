@@ -1,2 +1,4 @@
 RewriteEngine on
 RewriteRule ^choose-group Controller/signIn-Controller.php
+RewriteRule ^choose-trip  Controller/chooseGroup-Controller.php
+RewriteRule ^choose-Activity Controller/chooseJourney-Controller.php

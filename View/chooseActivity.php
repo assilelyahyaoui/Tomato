@@ -38,7 +38,7 @@
 
 
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="text-align: center; font-size: 10px; " >
-      <form action = "../Controller/chooseActivity-Controller.php" method="post">
+      <form action = "Controller/chooseActivity-Controller.php" method="post">
       <input type = "hidden" name= "activity" value='<?php $data['ida'] ?>'  >
 				<button type ="radio"  name= "activity" value='<?php echo $data['ida'] ;?>'  >
 					<a class="fig"><?php

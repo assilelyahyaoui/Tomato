@@ -1,7 +1,5 @@
 <?php
-
-		   echo "cookie id person  ";
-		  var_dump( $_COOKIE['idperson'] ) ;
+		 // var_dump( $_COOKIE['idperson'] ) ;
 
 		$activity_name = $_POST["activity_name"];
 		$activity_city =$_POST["activity_city"];
@@ -12,7 +10,6 @@
 		$activity_price = $_POST["activity_price"];
 		$activity_address = $_POST["activity_address"];
 		$activity_user_name = $_POST["activity_user_name"];
-
 		$activity_url = $_POST["activity_url"];
 
 		require_once('../Model/city-Model.php');
@@ -20,7 +17,9 @@
 		require_once('../Model/categorized-Model.php');
 		require_once('../Model/category-Model.php');
 
-
+ if ($activity_name!= NULL and $activity_city!=NULL and	$activity_category !=NULL
+ and $activity_price !=NULL
+){
 
 		addCity($activity_city);
 		addActivity($activity_name, $activity_price, $activity_url,$activity_address);
@@ -28,16 +27,23 @@
 		$activity_id=getActivityID($activity_name,$activity_price, $activity_url,$activity_address);
 		addCategorized($activity_id,$category_id );
 
-		  $activity_Total=getActivityScore($activity_id);
-		  $activity_nbVotes=getActivityNbVotes($activity_id);
-		  if ($activity_nbVotes==0){$activity_score=0;}
-		  else{$activity_score= $activity_Total/$activity_nbVotes;}
+		$activity_Total=getActivityScore($activity_id);
+		$activity_nbVotes=getActivityNbVotes($activity_id);
+		if ($activity_nbVotes==0){$activity_score=0;}
+		else{$activity_score= $activity_Total/$activity_nbVotes;}
 
 
 
 
-		require('../View/activity.php');
+		require_once('../View/activity.php');
+}
+	else{
 
-	// verifier si pas vide*/
+		 		header("Location: ../View/error.php?message=Please_Fill_out_all_the_Required_Fields");
+				$message = "Please Fill Out All The Required Fields";
+		 echo "error";
+		 			require_once('../View/error.php');
+
+	}
 
 ?>

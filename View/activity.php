@@ -3,7 +3,7 @@
 <head>
   <?php //require_once( '../View/navBar.php'); ?>
 
-<link rel="stylesheet" type="text/css" href="../view/activity.css">
+<link rel="stylesheet" type="text/css" href="../view/css/activity.css">
 <link href="../View/css/bootstrap.css" rel="stylesheet">
 <!-- jquery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -13,6 +13,11 @@
 
 <title>Activity synopsis</title>
 </head>
+<script>
+function showVotes() {
+  document.getElementById('wrap').style.display = 'inherit';
+}
+</script>
 <body>
 
 <div class="container">
@@ -68,7 +73,7 @@
 
 
 
-        <div class="v-wrap" style="display:none">
+        <div class="v-wrap" id='wrap' style="display:none">
              <div class="vote-options">
                <form action = "../Controller/activity-Vote-Controller.php" method="post">
                 <div class="btn-group" role="group" aria-label="Enter Your Vote">
@@ -88,7 +93,7 @@
         </div>
 
         <p>  <div class="col-md-6 vote-content">
-              <a class="btn btn-primary" class="votenow"  href="javascription:void(0)" role="button">Vote »</a>
+              <a class="btn btn-danger votenow" id="votenow" onclick="showVotes()" href="javascription:void(0)" role="button">Vote »</a>
             </div>
 
         </p>
