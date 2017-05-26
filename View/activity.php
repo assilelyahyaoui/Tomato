@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php //require_once( '../View/navBar.php'); ?>
+  <?php require_once( '../View/navBar.php'); ?>
 
-<link rel="stylesheet" type="text/css" href="../view/css/activity.css">
+<link rel="stylesheet" type="text/css" href="../View/css/activity.css">
 <link href="../View/css/bootstrap.css" rel="stylesheet">
 <!-- jquery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

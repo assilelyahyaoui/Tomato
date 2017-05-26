@@ -20,7 +20,7 @@
 				<span class="icon-bar"></span>
 			</button>
 
-      <img src="../View/Images/lPTomato.png" alt="LPTomato Icon" padding-top=10 >
+      <img src="View/Images/lPTomato.png" alt="LPTomato Icon" padding-top=10 >
 			<a class="navbar-brand" href="#">Tomato</a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbar">
@@ -34,17 +34,16 @@
 						<li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Game</span> sayfasında iletiniz beğenildi</a></li>
 					</ul>-->
 				</li>
-				<li class="active"><a href="../Controller/activity-navBar-Controller.php">Activities <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="../Controller/budget-Controller.php">Budget<span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="../Controller/addActivity-navBar-Controller.php">Add Activity <span class="sr-only">(current)</span></a></li>
-
+				<li class="active"><a href="activities">Activities <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="budget">Budget<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="addactivity">Add Activity <span class="sr-only">(current)</span></a></li>
 
 
 
         <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Switch<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="../Controller/chooseGroup-Controller.php">Trip</a></li>
+						<li><a href="choose-trip">Trip</a></li>
             <li class="divider"></li>
 						<li><a href="../Controller/group-navbar-controller.php">Group</a></li>
 
@@ -54,11 +53,11 @@
         <li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Create New<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="../Controller/addActivity-navBar-Controller.php">Activity</a></li>
+						<li><a href="addactivity">Activity</a></li>
             <li class="divider"></li>
-						<li><a href="../Controller/registration-Controller.php">Group</a></li>
+						<li><a href="addgroup">Group</a></li>
             <li class="divider"></li>
-						<li><a href="../Controller/addJouney-navbar-Controller.php">Trip</a></li>
+						<li><a href="addtrip">Trip</a></li>
 					</ul>
 				</li>
 

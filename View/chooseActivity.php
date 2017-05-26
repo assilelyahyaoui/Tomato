@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../View/css/jquery-ui.min.css">
     <script src="../View/css/jquery-ui.min.js"></script>
-    <?php //include_once( '../View/navBar.php'); ?>
+    <?php include_once( '../View/navBar.php'); ?>
 
   </head>
 
@@ -38,7 +38,7 @@
 
 
 		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" style="text-align: center; font-size: 10px; " >
-      <form action = "Controller/chooseActivity-Controller.php" method="post">
+      <form action = "activity" method="post">
       <input type = "hidden" name= "activity" value='<?php $data['ida'] ?>'  >
 				<button type ="radio"  name= "activity" value='<?php echo $data['ida'] ;?>'  >
 					<a class="fig"><?php

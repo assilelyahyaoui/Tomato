@@ -18,7 +18,7 @@
     <body>
       <h1>Add a Journey</h1>
 
-      <form action = "../Controller/addJourney-controller.php" method="post">
+      <form action = "../Controller/joinGroup-Controller.php" method="post">
         <div class="form-group">
           <label for="group_name">Enter the Name of your Group</label>
           <input type="text" class="form-control" id="group_name"  name="group_name" placeholder="Enter the Group Name" required>

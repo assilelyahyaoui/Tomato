@@ -89,6 +89,16 @@ CREATE TABLE activity
   CONSTRAINT activity_pk PRIMARY KEY (idActivity)
 );
 
+CREATE TABLE creates
+(
+
+  idPerson integer NOT NULL,
+  idActivity integer NOT NULL,
+  CONSTRAINT creates_pk PRIMARY KEY (idPerson, idActivity),
+  CONSTRAINT creates_person_fk FOREIGN KEY (idPerson) REFERENCES person(idperson),
+  CONSTRAINT ccreates_Activity_fk FOREIGN KEY (idActivity) REFERENCES activity(idActivity)
+);
+
 CREATE TABLE categorized
 (
   idCategorized SERIAL NOT NULL,

@@ -1,11 +1,12 @@
 <?php
 
-
+var_dump($_POST);
+echo "lalala";
       $group_name = $_POST["group_name"];
       $group_password=$_POST["group_password"];
       $group_password2=$_POST["group_password2"];
 
-    if ($group_name != NULL and $groupe_password!= NULL and $groupe_password2!=NULL)
+  if ($group_name != NULL and $groupe_password!= NULL and $groupe_password2!=NULL)
 
     {  require_once('../Model/groupOfPeople-Model.php');
 

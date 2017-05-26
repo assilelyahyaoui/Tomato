@@ -13,7 +13,7 @@
   </head>
   <body>
 
- <form action = "../Controller/registration-Controller.php" method="post">
+ <form action = "addgroup" method="post">
     <div class="form-group">
     <div class="col-md-3"></div>
     <div class="col-md-6">

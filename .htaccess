@@ -2,3 +2,9 @@ RewriteEngine on
 RewriteRule ^choose-group Controller/signIn-Controller.php
 RewriteRule ^choose-trip  Controller/chooseGroup-Controller.php
 RewriteRule ^choose-Activity Controller/chooseJourney-Controller.php
+RewriteRule ^activity  Controller/chooseActivity-Controller.php
+RewriteRule ^activities Controller/activity-navBar-Controller.php
+RewriteRule ^budget Controller/budget-Controller.php
+RewriteRule ^addactivity  Controller/addActivity-navBar-Controller.php
+RewriteRule ^addtrip  Controller/addJouney-navbar-Controller.php
+RewriteRule ^addgroup Controller/registration-Controller.php
