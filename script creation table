@@ -1,0 +1,210 @@
+
+
+DROP TABLE IF EXISTS city CASCADE;
+DROP TABLE IF EXISTS categorized CASCADE;
+DROP TABLE IF EXISTS category CASCADE;
+DROP TABLE IF EXISTS tied CASCADE;
+DROP TABLE IF EXISTS goOn CASCADE;
+DROP TABLE IF EXISTS groupOfPeople CASCADE;
+DROP TABLE IF EXISTS journey CASCADE;
+DROP TABLE IF EXISTS grade CASCADE;
+DROP TABLE IF EXISTS person CASCADE;
+DROP TABLE IF EXISTS activity CASCADE;
+
+
+CREATE TABLE city
+(
+  idCity SERIAL NOT NULL,
+  nameCity character varying(30),
+  CONSTRAINT city_pk PRIMARY KEY (idcity)
+);
+
+CREATE TABLE person
+(
+  idPerson SERIAL NOT NULL,
+  emailPerson character varying(30),
+  namePerson character varying(30),
+  firstNamePerson character varying(30),
+  passwordPerson character varying(100),
+  colorPerson character varying(9),
+  CONSTRAINT person_pk PRIMARY KEY (idperson)
+);
+
+
+CREATE TABLE groupOfPeople
+(
+  idGroup SERIAL NOT NULL,
+  nameGroup character varying(50) NOT NULL,
+  passwordGroup character varying(100) NOT NULL,
+  nbPeople integer DEFAULT 0,
+  CONSTRAINT groupOfPeople_pk PRIMARY KEY (idGroup)
+);
+
+CREATE TABLE tied
+(
+  idTied SERIAL NOT NULL,
+  idPerson integer NOT NULL,
+  idGroup integer NOT NULL,
+  CONSTRAINT tied_pk PRIMARY KEY (idTied),
+  CONSTRAINT tied_Person_fk FOREIGN KEY (idPerson) REFERENCES person(idPerson),
+  CONSTRAINT tied_Group_fk FOREIGN KEY (idGroup) REFERENCES groupOfPeople(idGroup)
+
+);
+
+
+CREATE TABLE goOn
+(
+  idGroup integer NOT NULL,
+  idJourney integer NOT NULL,
+  CONSTRAINT goOn_pk PRIMARY KEY (idGroup, idJourney)
+);
+
+CREATE TABLE journey
+(
+  idjourney SERIAL NOT NULL ,
+  namejourney character varying(100),
+  passwordjourney character varying(100),
+  CONSTRAINT journey_pk PRIMARY KEY (idjourney)
+);
+
+CREATE TABLE category
+(
+  idCategory SERIAL NOT NULL,
+  nameCategory character varying (30),
+  budgetCategory real DEFAULT 0,
+  CONSTRAINT category_pk PRIMARY KEY (idCategory)
+
+);
+
+CREATE TABLE activity
+(
+  idActivity SERIAL NOT NULL,
+  nameActivity character varying(30),
+  priceActivity real,
+  conditionActivity character varying(30) DEFAULT 'Processing',
+  websiteActivity character varying(1000),
+  addressActivity character varying(100),
+  scoreActivity integer DEFAULT 0,
+  nbVotes integer DEFAULT 0,
+  CONSTRAINT activity_pk PRIMARY KEY (idActivity)
+);
+
+CREATE TABLE categorized
+(
+  idCategorized SERIAL NOT NULL,
+  idActivity integer NOT NULL,
+  idCategory integer NOT NULL,
+  CONSTRAINT categorized_pk PRIMARY KEY (idCategorized),
+  CONSTRAINT categorized_activity_fk FOREIGN KEY (idActivity) REFERENCES activity(idActivity),
+  CONSTRAINT categorized_category_fk FOREIGN KEY (idCategory) REFERENCES category(idCategory)
+);
+
+
+CREATE TABLE grade
+(
+  idActivity integer,
+  idPerson integer,
+  grade integer NOT NULL,
+  CONSTRAINT grade_pk PRIMARY KEY (idActivity,idPerson),
+  CONSTRAINT grade_activity_fk FOREIGN KEY (idActivity )references activity(idActivity),
+  CONSTRAINT grade_person_fk FOREIGN KEY (idPerson) references person(idPerson),
+  CONSTRAINT Grade_idGrade_check CHECK (grade >= 0 AND grade <= 10)
+);
+
+/*CREATE TABLE time
+(
+
+);*/
+
+INSERT INTO city(namecity) VALUES ('NEW YORK');
+INSERT INTO city(namecity) VALUES ('RIYADH');
+INSERT INTO city(namecity) VALUES ('BONDI');
+
+INSERT INTO category(nameCategory) VALUES ('ARTISTIC');
+INSERT INTO category(nameCategory) VALUES ('SPORT');
+INSERT INTO category(nameCategory) VALUES ('HISTORICAL');
+INSERT INTO category(nameCategory) VALUES ('FOOD');
+
+INSERT INTO groupofpeople(namegroup,passwordgroup,nbpeople) VALUES ('EL YAHYAOUI',2233,5);
+INSERT INTO groupofpeople(namegroup,passwordgroup,nbpeople) VALUES ('CREW','dokdo',3);
+INSERT INTO groupofpeople(namegroup,passwordgroup,nbpeople) VALUES ('les vrais','dokdo',3);
+
+
+INSERT INTO person(emailPerson,nameperson,firstnameperson,passwordperson,colorperson) VALUES ('elyahyaouiassil@hotmail.com','EL YAHYAOUI','ASSIL','LALLLA','BLACK');
+INSERT INTO person(emailPerson,nameperson,firstnameperson,passwordperson,colorperson) VALUES ('lalal@gmail.au','EL YAHYAOUI','HADIL','YOOY','GREEN');
+
+INSERT INTO tied(idperson, idgroup) VALUES (1,1);
+insert into tied(idperson, idgroup) values(2,4);
+insert into tied(idperson, idgroup) values(2,3);
+
+INSERT INTO activity(nameactivity, priceactivity) VALUES ('EMPIRE STATE','30');
+INSERT INTO activity(nameactivity, priceactivity) VALUES ('BROADWAY','60');
+
+INSERT INTO goOn VALUES(1,1);
+
+INSERT INTO grade(idactivity, idperson,grade) VALUES (1,1,8);
+INSERT INTO grade(idactivity, idperson,grade) VALUES (2,2,5);
+
+INSERT INTO categorized(idactivity, idcategory) VALUES (1,1);
+
+INSERT INTO journey(nameJourney, passwordJourney) VALUES ('Summer 17', 'lolo');
+
+
+----TRIGGERS
+
+drop trigger if exists ins_grade on grade  ;
+drop trigger if exists ins_tied on tied  ;
+drop trigger if exists ins_categorized on categorized  ;
+
+
+
+
+CREATE OR REPLACE FUNCTION ins_grade() RETURNS TRIGGER AS
+  $BODY$
+
+  BEGIN
+  UPDATE activity
+        SET scoreactivity=scoreactivity+New.grade
+        WHERE idActivity=New.idActivity;
+        RETURN NEW;
+  END;
+
+  $BODY$
+
+LANGUAGE plpgsql VOLATILE COST 100;
+CREATE TRIGGER ins_grade AFTER INSERT ON grade
+FOR EACH ROW EXECUTE PROCEDURE ins_grade();
+
+
+
+CREATE OR REPLACE FUNCTION ins_tied() RETURNS TRIGGER AS
+  $BODY$
+
+  BEGIN
+  UPDATE groupOfPeople
+        SET nbPeople=nbPeople+1
+        WHERE idgroup=New.idgroup;
+        RETURN NEW;
+  END;
+
+  $BODY$
+
+LANGUAGE plpgsql VOLATILE COST 100;
+CREATE TRIGGER ins_tied AFTER INSERT ON tied
+FOR EACH ROW EXECUTE PROCEDURE ins_tied();
+
+CREATE OR REPLACE FUNCTION ins_categorized() RETURNS TRIGGER AS
+  $BODY$
+
+  BEGIN
+  UPDATE category
+        SET budgetcategory=budgetcategory+New.idActivity.priceActivity
+        WHERE idcategory=New.idcategory;
+        RETURN NEW;
+  END;
+
+  $BODY$
+
+LANGUAGE plpgsql VOLATILE COST 100;
+CREATE TRIGGER ins_categorized AFTER INSERT ON categorized
+FOR EACH ROW EXECUTE PROCEDURE ins_categorized();
