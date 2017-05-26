@@ -25,15 +25,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="navbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Calendar <span class="badge">0</span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#"><i class="fa fa-fw fa-tag"></i> <span class="badge">Music</span> sayfası <span class="badge">Video</span> sayfasında etiketlendi</a></li>
-						<li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Music</span> sayfasında iletiniz beğenildi</a></li>
-						<li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Video</span> sayfasında iletiniz beğenildi</a></li>
-						<li><a href="#"><i class="fa fa-fw fa-thumbs-o-up"></i> <span class="badge">Game</span> sayfasında iletiniz beğenildi</a></li>
-					</ul>-->
-				</li>
+
 				<li class="active"><a href="activities">Activities <span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="budget">Budget<span class="sr-only">(current)</span></a></li>
         <li class="active"><a href="addactivity">Add Activity <span class="sr-only">(current)</span></a></li>
