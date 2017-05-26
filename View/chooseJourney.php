@@ -29,7 +29,7 @@
 
     <?php
      require_once('../Model/goOn-Model.php');
-     require_once('../Model/Journey-Model.php');
+     require_once('../Model/journey-Model.php');
      require_once('../Model/groupOfPeople-Model.php');
 
     $results = getAllGoOnByGroup(1);
