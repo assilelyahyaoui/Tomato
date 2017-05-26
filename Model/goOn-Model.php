@@ -1,7 +1,8 @@
 <?php
 
 function existsGoOn($group_id, $journey_id){
-
+// returns true if there is a link between $group_id and  $journey_id in the db
+// false otherwise
   require_once("../Model/PDO.php");
       $db = connection();
       $result = $db->query("SELECT count(*) as nb
@@ -39,6 +40,7 @@ function addGoOn($group_id,$journey_id)
 
 
 function getAllGoOn(){
+  //gets all the links between $group_id, $journey_id in the database 
    require_once("../Model/PDO.php");
   $db = connection();
   $result = $db->query("SELECT idgroup as idg, idjourney as idj

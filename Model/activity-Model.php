@@ -2,7 +2,7 @@
 
 
 function existsActivity($activity_name, $activity_price, $activity_url,$activity_address){
-//return false if the city name dosent exist in the db. true otherwise
+//return false if the activity dosen't exist in the database
   $UCactivityname= strtoupper($activity_name);
   require_once("../Model/PDO.php");
       $bd = connection();
@@ -25,7 +25,7 @@ function existsActivity($activity_name, $activity_price, $activity_url,$activity
 }
 
 function addActivity($activity_name, $activity_price, $activity_url,$activity_address){
-
+//adds the activity to the database
 require_once("../Model/PDO.php");
 $UCactivityname= strtoupper($activity_name);
 
@@ -42,14 +42,16 @@ $exists = existsActivity($UCactivityname, $activity_price, $activity_url,$activi
 }
 
  function changeCondition($activityid, $newCondition)
- {
+ {// changes the condition of the activity and sets it to either pending or
+   //approved or rejected
     require_once("../Model/PDO.php");
 
     $pending = 'Pending';
     $approved = 'Approved';
     $rejected = 'Rejected';
 
-    $condition = ($newCondition ==$pending || $newCondition=='Approved'|| $newCondition=='Rejected');
+    $condition = ($newCondition ==$pending || $newCondition=='Approved'||
+                  $newCondition=='Rejected');
 
         if(!$exists && $condition){
         $bd = connection();
@@ -60,6 +62,7 @@ $exists = existsActivity($UCactivityname, $activity_price, $activity_url,$activi
 
 
   function getActivityID($activity_name, $activity_price, $activity_url,$activity_address){
+    //gets the activity id based on its name, price. url and address
 
     require_once("../Model/PDO.php");
     $db = connection();
@@ -85,7 +88,7 @@ $exists = existsActivity($UCactivityname, $activity_price, $activity_url,$activi
   }//getActivityID
 
 function getActivityScore($activity_id){
-
+// returns the activity's score based on its id inserted in the parameters
     require_once("PDO.php");
       $db = connection();
 
@@ -100,7 +103,7 @@ function getActivityScore($activity_id){
   }//getActivityScore
 
   function getActivityAdress($activity_id){
-
+  //  returns the activitys address based on its id
       require_once("PDO.php");
         $db = connection();
 
@@ -113,6 +116,7 @@ function getActivityScore($activity_id){
     }//getActivityAdress
 
     function getActivityPrice($activity_id){
+      // returns the activity's price based on its id inserted in the parameters
 
         require_once("PDO.php");
           $db = connection();
@@ -126,6 +130,7 @@ function getActivityScore($activity_id){
       }//getActivityPrice
 
       function getActivityNbVotes($activity_id){
+        // returns the activity's number of votes  based on its id inserted in the parameters
 
           require_once("PDO.php");
             $db = connection();
@@ -141,6 +146,7 @@ function getActivityScore($activity_id){
 
 
   function getActivityName($activity_id){
+    // returns the activity's name based on its id inserted in the parameters
 
       require_once("PDO.php");
         $db = connection();
@@ -156,7 +162,7 @@ function getActivityScore($activity_id){
     }//getActivityScore
 
   function setActivityScore($activity_id,$newscore){
-
+// sets the activity's (whose id is $activity_id) score to $newscore
     require_once("../Model/PDO.php");
 
         $bd = connection();
@@ -167,7 +173,7 @@ function getActivityScore($activity_id){
   }
 
   function FindActivityCategory($activity_id){
-
+// returns the category of the activity
   require_once("../Model/PDO.php");
         $db = connection();
        $result = $db->query("SELECT idcategory as cat
@@ -182,6 +188,25 @@ function getActivityScore($activity_id){
        return $data['cat'];
 
   }
+
+  function deleteActivity($activity_id){
+//deletes the activity who's id is $activity_id
+
+    require_once("../Model/PDO.php");
+          $db = connection();
+
+        try{
+          $delete = $db->exec( "DELETE FROM activity WHERE idactivity=$activity_id" );
+
+        //  $req=$db->prepare("DELETE FROM activity WHERE idactivity=$activity_id");
+      		//$req->execute(array($id));
+      	} catch(PDOException $e){
+      			echo($e->getMessage());
+      			die(" Erreur lors de la suppression du lieu dans la base de données " );
+        }
+
+
+  }//deleteActivity
 
 
 

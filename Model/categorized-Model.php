@@ -1,7 +1,7 @@
 <?php
 
 function existsCategorized($activity_id, $category_id){
-
+//return true if the exists false otherwise
   require_once("../Model/PDO.php");
       $db = connection();
       $result = $db->query("SELECT count(*) as nb
@@ -19,7 +19,7 @@ function existsCategorized($activity_id, $category_id){
 }//existsCategorized
 
 function addCategorized($activity_id, $category_id)
-{
+{//addscategorized to the database
    require_once("../Model/PDO.php");
    echo "||||";
  $exists = existsCategorized($activity_id, $category_id);

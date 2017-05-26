@@ -1,8 +1,9 @@
 <?php
 
 function existsGrade($activity_id,$person_id){
-//return false if the city name dosent exist in the db. true otherwise
-  require_once("../Model/PDO.php");
+  // returns true if there is a link between $activity_id and $person_id in the db
+  // false otherwise
+    require_once("../Model/PDO.php");
 
       $db = connection();
       $result = $db->query("SELECT COUNT(*) as nb
@@ -18,7 +19,7 @@ function existsGrade($activity_id,$person_id){
 }
 
 function addGrade($activity_id, $person_id,$grade){
-
+// creates a link between $activity_id and $person_id in the db
 require_once("../Model/PDO.php");
 
 $exists = existsGrade($activity_id, $person_id);
@@ -37,8 +38,7 @@ $exists = existsGrade($activity_id, $person_id);
 }//addGrade
 
 function removeGrade($activity_id, $person_id)
-#parameters : string name of the city
-#post : removes the city matching the city naame in the parameters from the database
+// removes the grade given by the person to the activity passed in the parameters
 {
   require_once("../Model/PDO.php");
   $db = connection();
@@ -53,7 +53,7 @@ function removeGrade($activity_id, $person_id)
 }
 
 function getGrade($activity_id, $person_id){
-
+// returns the grade given by $person_id to $activity_id
   require_once("../Model/PDO.php");
   $db = connection();
 
@@ -75,7 +75,7 @@ function getGrade($activity_id, $person_id){
 
 
 function setGrade($activity_id, $person_id ,$newgrade){
-
+    // sets the grade $newgrade of the person $person_id to the activity $activity_id 
   require_once("../Model/PDO.php");
 
       $db = connection();

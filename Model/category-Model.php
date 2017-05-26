@@ -1,7 +1,7 @@
 <?php
 
   function existsCategory($category_name){
-  //return false if the city name dosent exist in the db. true otherwise
+  //return false if the category's name dosent exist in the db. true otherwise
     $UCcategoryname= strtoupper($category_name);
 
     require_once("../Model/PDO.php");
@@ -22,8 +22,7 @@
 
 
     function addCategory($category_name)
-    #Donnée: Email (chaine de char) de l'étudiant, un mdp haché, nom(char) et prénom(char) de l'étudiant ainsi que sa promo (int = idPromo)
-    #Post: ajoute l'étudiant à la base de données
+    // adds the category to the database
     {
        require_once("../Model/PDO.php");
 
@@ -40,8 +39,7 @@
     }
 
     function removeCategoryById($category_id)
-    #parameters : string name of the city
-    #post : removes the city matching the city naame in the parameters from the database
+      // remove the category who's id is $category_id
     {
 
       require_once("../Model/PDO.php");
@@ -55,7 +53,7 @@
     }
 
     function getCategoryID($category_name){
-
+      // gets the category's id based on its name
       require_once("../Model/PDO.php");
       $db = connection();
 
@@ -74,7 +72,7 @@
   }//getCategoryID
 
   function getCategoryName($category_id){
-
+    // gets the category's name based on its id
     require_once("../Model/PDO.php");
     $db = connection();
 
@@ -91,7 +89,7 @@
 
 
     function getCategoryBudget($category_id){
-
+// returns the category's budget 
         require_once("PDO.php");
           $db = connection();
 

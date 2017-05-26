@@ -22,7 +22,7 @@ function existsJourney($journey_name,$group_id ){
 
 
 function addJourney($journey_name,$group_id){
-
+// adds a journey to the database
 require_once("../Model/PDO.php");
 $UCjourneyname= $journey_name;//strtoupper($journey_name);
 $exists = existsJourney($journey_name,$group_id);
@@ -38,7 +38,7 @@ $exists = existsJourney($journey_name,$group_id);
 }//AddGoOn
 
 function getJourneyName($Journey_id){
-
+// gets the journey's (whose id is $Journey_id ) name
   require_once("../Model/PDO.php");
   $db = connection();
 

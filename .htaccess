@@ -8,3 +8,5 @@ RewriteRule ^budget Controller/budget-Controller.php
 RewriteRule ^addactivity  Controller/addActivity-navBar-Controller.php
 RewriteRule ^addtrip  Controller/addJouney-navbar-Controller.php
 RewriteRule ^addgroup Controller/registration-Controller.php
+RewriteRule ^choosegroup Controller/switchgroup-navbar-Controller.php
+RewriteRule ^creategroup  Controller/group-navbar-controller.php

@@ -1,7 +1,7 @@
 <?php
 
 function existsHas($journey_id, $activity_id){
-
+// retunrns true if there is a link between $journey_id, $activity_id
   require_once("../Model/PDO.php");
       $db = connection();
       $result = $db->query("SELECT count(*) as nb
@@ -19,7 +19,7 @@ function existsHas($journey_id, $activity_id){
 }//existshas
 
 function addHas($journey_id, $activity_id)
-{
+{ // adds a link between $journey_id, $activity_id in the db
    require_once("../Model/PDO.php");
  $exists = existsHas($journey_id, $activity_id) ;
   if (!$exists){
@@ -33,7 +33,7 @@ function addHas($journey_id, $activity_id)
 
 
 function getAllHasByJourney($Journey_id){
-
+// gets all the activities that are associated with the journey
    require_once("../Model/PDO.php");
   $db = connection();
   $result = $db->query("SELECT idactivity as ida

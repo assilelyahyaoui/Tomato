@@ -16,9 +16,7 @@
 		require_once('../Model/activity-Model.php');
 		require_once('../Model/categorized-Model.php');
 		require_once('../Model/category-Model.php');
-		require_once('../Model/creates-Model.php');
-
-
+		
  if ($activity_name!= NULL and $activity_city!=NULL and	$activity_category !=NULL
  and $activity_price !=NULL
 ){
@@ -31,8 +29,6 @@
 		$activity_id=getActivityID($activity_name,$activity_price, $activity_url,$activity_address);
 		addCategorized($activity_id,$category_id );
 
-		echo "||||";
-		var_dump(existsCreates(1,1));
 
 		$activity_Total=getActivityScore($activity_id);
 		$activity_nbVotes=getActivityNbVotes($activity_id);

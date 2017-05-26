@@ -2,6 +2,7 @@
 
 
 function existsPerson($person_email, $person_name, $person_firstname,$person_password, $person_color){
+  // returns true if the person exists in the database false otherwise
   $UCpersonname= strtoupper($person_name);
   $UCpersonfirstname= strtoupper($person_firstname);
 
@@ -26,7 +27,7 @@ function existsPerson($person_email, $person_name, $person_firstname,$person_pas
 }//existsPerson
 
 function existsEmail($person_email){
-
+// returns true if the email is already in the db false otherwise
   require_once("../Model/PDO.php");
       $db = connection();
       $result = $db->query("SELECT count(*) as nb
@@ -43,7 +44,7 @@ function existsEmail($person_email){
 }//existsPerson
 
 function existsColor($person_color){
-
+// returns false if the colr exists in the database false otherwise
   require_once("../Model/PDO.php");
       $db = connection();
       $result = $db->query("SELECT count(*) as nb
@@ -61,8 +62,7 @@ function existsColor($person_color){
 
 
 function addPerson($person_email, $person_name, $person_firstname,$person_password, $person_color)
-#Donnée: Email (chaine de char) de l'étudiant, un mdp haché, nom(char) et prénom(char) de l'étudiant ainsi que sa promo (int = idPromo)
-#Post: ajoute l'étudiant à la base de données
+// adds person to the db
 {
    require_once("../Model/PDO.php");
    $UCpersonname= strtoupper($person_name);
@@ -84,7 +84,7 @@ echo $exists;
 
 
 function getAllGroupofPerson($person_id){
-
+  // return all the group id on which the perosn is tied to
   require_once("../Model/PDO.php");
   $db = connection();
   $result = $db->query("SELECT idgroup as idg
@@ -101,7 +101,7 @@ function getAllGroupofPerson($person_id){
 }//getAllgroup
 
 function getPassword($person_email){
-
+// gets the password of the person whose id is in parameters
   require_once("../Model/PDO.php");
   $db = connection();
   $result = $db->query("SELECT passwordperson as idp
@@ -116,6 +116,7 @@ function getPassword($person_email){
 }//getPassword
 
 function getEmail($person_id){
+  // gets the email of the person whose id is in parameters
 
   require_once("../Model/PDO.php");
   $db = connection();
@@ -130,6 +131,7 @@ function getEmail($person_id){
 }//getAllgroup
 
 function getId($person_email){
+  // gets the id of the person whose id is in parameters
 
   require_once("../Model/PDO.php");
   $db = connection();

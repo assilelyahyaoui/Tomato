@@ -1,7 +1,7 @@
 <?php
 
 function existsGroup($group_name,$group_password){
-//return false if the city name dosent exist in the db. true otherwise
+//return false if the group name dosent exist in the db. true otherwise
 
   $UCgroupname= strtoupper($group_name);
   require_once("../Model/PDO.php");
@@ -25,7 +25,7 @@ function existsGroup($group_name,$group_password){
 }//existsGroup
 
 function addGroup($group_name,$group_password)
-{
+{// adds the grou pto the db
    require_once("../Model/PDO.php");
 
   $UCgroupname = strtoupper($group_name);
@@ -45,7 +45,7 @@ function addGroup($group_name,$group_password)
 }
 
 function getGroupNbPeople($group_name){
-
+// returns the number of people that have joined this group
   require_once("../Model/PDO.php");
   $db = connection();
 
@@ -64,7 +64,7 @@ return $data['nb'] ;
 }//getGroupNbPeople
 
 function getGroupID($group_name){
-
+// gets the group's id
   require_once("../Model/PDO.php");
   $db = connection();
 
@@ -84,7 +84,7 @@ return $data['id'] ;
 
 
 function getGroupName($group_id){
-
+//gets the group/s name according to the id given
   require_once("../Model/PDO.php");
   $db = connection();
 
@@ -101,7 +101,7 @@ return $data['name'] ;
 
 
   function getAllGroupMembers($group_id){
-
+// return all the group memebers of the group
     require_once("../Model/PDO.php");
     $db = connection();
     $result = $db->query("SELECT idperson as idp
@@ -119,7 +119,7 @@ return $data['name'] ;
 
 
   function getGroupPassword($group_id){
-
+    // returns the group's password
     require_once("../Model/PDO.php");
     $db = connection();
     $result = $db->query("SELECT passwordgroup as idg

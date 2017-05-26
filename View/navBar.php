@@ -45,7 +45,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="choose-trip">Trip</a></li>
             <li class="divider"></li>
-						<li><a href="addgroup">Group</a></li>
+						<li><a href="choosegroup">Group</a></li>
 
 					</ul>
 				</li>
@@ -55,7 +55,7 @@
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="addactivity">Activity</a></li>
             <li class="divider"></li>
-						<li><a href="../Controller/group-navbar-controller.php">Group</a></li>
+						<li><a href="creategroup">Group</a></li>
             <li class="divider"></li>
 						<li><a href="addtrip">Trip</a></li>
 					</ul>

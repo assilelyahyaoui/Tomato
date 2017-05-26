@@ -121,44 +121,6 @@ CREATE TABLE grade
   CONSTRAINT Grade_idGrade_check CHECK (grade >= 0 AND grade <= 10)
 );
 
-/*CREATE TABLE time
-(
-
-);*/
-
-INSERT INTO city(namecity) VALUES ('NEW YORK');
-INSERT INTO city(namecity) VALUES ('RIYADH');
-INSERT INTO city(namecity) VALUES ('BONDI');
-
-INSERT INTO category(nameCategory) VALUES ('ARTISTIC');
-INSERT INTO category(nameCategory) VALUES ('SPORT');
-INSERT INTO category(nameCategory) VALUES ('HISTORICAL');
-INSERT INTO category(nameCategory) VALUES ('FOOD');
-
-INSERT INTO groupofpeople(namegroup,passwordgroup,nbpeople) VALUES ('EL YAHYAOUI',2233,5);
-INSERT INTO groupofpeople(namegroup,passwordgroup,nbpeople) VALUES ('CREW','dokdo',3);
-INSERT INTO groupofpeople(namegroup,passwordgroup,nbpeople) VALUES ('les vrais','dokdo',3);
-
-
-INSERT INTO person(emailPerson,nameperson,firstnameperson,passwordperson,colorperson) VALUES ('elyahyaouiassil@hotmail.com','EL YAHYAOUI','ASSIL','LALLLA','BLACK');
-INSERT INTO person(emailPerson,nameperson,firstnameperson,passwordperson,colorperson) VALUES ('lalal@gmail.au','EL YAHYAOUI','HADIL','YOOY','GREEN');
-
-INSERT INTO tied(idperson, idgroup) VALUES (1,1);
-insert into tied(idperson, idgroup) values(2,4);
-insert into tied(idperson, idgroup) values(2,3);
-
-INSERT INTO activity(nameactivity, priceactivity) VALUES ('EMPIRE STATE','30');
-INSERT INTO activity(nameactivity, priceactivity) VALUES ('BROADWAY','60');
-
-INSERT INTO goOn VALUES(1,1);
-
-INSERT INTO grade(idactivity, idperson,grade) VALUES (1,1,8);
-INSERT INTO grade(idactivity, idperson,grade) VALUES (2,2,5);
-
-INSERT INTO categorized(idactivity, idcategory) VALUES (1,1);
-
-INSERT INTO journey(nameJourney, passwordJourney) VALUES ('Summer 17', 'lolo');
-
 
 ----TRIGGERS
 
@@ -202,19 +164,3 @@ CREATE OR REPLACE FUNCTION ins_tied() RETURNS TRIGGER AS
 LANGUAGE plpgsql VOLATILE COST 100;
 CREATE TRIGGER ins_tied AFTER INSERT ON tied
 FOR EACH ROW EXECUTE PROCEDURE ins_tied();
-
-CREATE OR REPLACE FUNCTION ins_categorized() RETURNS TRIGGER AS
-  $BODY$
-
-  BEGIN
-  UPDATE category
-        SET budgetcategory=budgetcategory+New.idActivity.priceActivity
-        WHERE idcategory=New.idcategory;
-        RETURN NEW;
-  END;
-
-  $BODY$
-
-LANGUAGE plpgsql VOLATILE COST 100;
-CREATE TRIGGER ins_categorized AFTER INSERT ON categorized
-FOR EACH ROW EXECUTE PROCEDURE ins_categorized();

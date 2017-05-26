@@ -16,7 +16,7 @@ $activity_Total=getActivityScore($activity_id);
 $activity_nbVotes=getActivityNbVotes($activity_id);
 if ($activity_nbVotes==0){$activity_score=0;}
 else{$activity_score= $activity_Total/$activity_nbVotes;}
-require_once("../View/Activity.php");
+require_once("../View/activity.php");
 
 
 

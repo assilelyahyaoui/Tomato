@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php require_once( '../View/navBar.php'); ?>
+  <?php //require_once( '../View/navBar.php'); ?>
 
 <link rel="stylesheet" type="text/css" href="../View/css/activity.css">
 <link href="../View/css/bootstrap.css" rel="stylesheet">
@@ -98,15 +98,15 @@ function showVotes() {
 
         </p>
 
-    </div><!--/. col-md -->
-    <!--<div class="pr-wrap">
-         <div class="pass-reset">
-            <label>  Enter the email you signed up with</label>
-            <input type="email" placeholder="Email" id="signInReset-email" />
-            <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" id="signInReset-password"/>
-        </div>
-    </div>-->
+        <p>  <form class="" action="./Controller/deleteActivity-Controller.php" method="get">
 
+            <div class="col-md-6 vote-content">
+              <a class="btn btn-danger votenow" id="<?php $activity_id ?>" href="./Controller/deleteActivity-Controller.php" role="button" method="post">Delete Activity</a>
+            </div>
+            </form>
+        </p>
+
+    </div>
 
 
     <div class="col-md-5">

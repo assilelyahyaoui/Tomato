@@ -1,7 +1,7 @@
 <?php
 
 function existsTied($group_id, $person_id){
-
+// returns true if there is a link between $group_id, $person_id
   require_once("../Model/PDO.php");
       $db = connection();
       $result = $db->query("SELECT count(*) as nb
@@ -19,7 +19,7 @@ function existsTied($group_id, $person_id){
 }
 
 function addTied($group_id,$person_id)
-{
+{// adds a link between $group_id, $person_id in the db
    require_once("../Model/PDO.php");
  $exists = existsTied($group_id,$person_id) ;
 
@@ -37,7 +37,7 @@ function addTied($group_id,$person_id)
 }//addTied
 
 function getAllTied(){
-
+// gets all the links between all groups ans persons
    require_once("../Model/PDO.php");
   $db = connection();
   $result = $db->query("SELECT idtied as idt, idperson as idp, idgroup as idg
@@ -52,7 +52,7 @@ function getAllTied(){
   }//getAllTies
 
   function getAllTiedByPerson($Person_id){
-
+// returns the ties and groupnames associated with person_id 
      require_once("../Model/PDO.php");
     $db = connection();
     $result = $db->query("SELECT idtied as idt, idgroup as idg

@@ -16,8 +16,7 @@ function existsCity($cityname){
 }
 
 function addCity($city_name)
-#Donnée: Email (chaine de char) de l'étudiant, un mdp haché, nom(char) et prénom(char) de l'étudiant ainsi que sa promo (int = idPromo)
-#Post: ajoute l'étudiant à la base de données
+//adds the city to the database
 {
    require_once("../Model/PDO.php");
 
@@ -50,7 +49,7 @@ function removeCityByName($city_name)
 
 
 function getCityID($city_name){
-
+  // returns the city's id according to its name
   require_once("../Model/PDO.php");
   $db = connection();
 
@@ -93,5 +92,4 @@ function getAllCitiesID($city)
 
 */
 
-//change state
-// check if city exists*/  ?>
+ ?>
